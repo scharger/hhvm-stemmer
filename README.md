@@ -1,5 +1,4 @@
 # HHVM Snowball Stemmer extension
-==============================
 
 (Forked from https://github.com/shabbyrobe/php-stemmer)
 
