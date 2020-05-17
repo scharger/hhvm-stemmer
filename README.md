@@ -12,9 +12,9 @@ snowball project. http://snowballstem.org/
 	make
 ```
 	
-php_stemmer.so will be saved to /etc/hhvm/
+hhvm_stemmer.so will be saved to /etc/hhvm/
 
-2. add "hhvm.extensions[php_stemmer] = php_stemmer.so" -> /etc/hhvm/php.ini and /etc/hhvm/server.ini
+2. add "hhvm.extensions[hhvm_stemmer] = hhvm_stemmer.so" -> /etc/hhvm/php.ini and /etc/hhvm/server.ini
 
 3. Service HHVM restart
 
