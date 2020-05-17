@@ -1,6 +1,6 @@
-project(php_stemmer)
+project(hhvm_stemmer)
 
-HHVM_EXTENSION(php_stemmer ext_php_stemmer.cpp)
-HHVM_SYSTEMLIB(php_stemmer ext_php_stemmer.php)
+HHVM_EXTENSION(hhvm_stemmer ext_hhvm_stemmer.cpp)
+HHVM_SYSTEMLIB(hhvm_stemmer ext_hhvm_stemmer.php)
 
-target_link_libraries(php_stemmer ${CMAKE_SOURCE_DIR}/libstemmer.o)
+target_link_libraries(hhvm_stemmer ${CMAKE_SOURCE_DIR}/libstemmer.o)

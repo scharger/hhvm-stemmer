@@ -126,9 +126,9 @@ namespace HPHP {
 	}
 	
 	
-	class php_stemmerExtension : public Extension {
+	class hhvm_stemmerExtension : public Extension {
 		public:
-			php_stemmerExtension(): Extension("php_stemmer", "0.1.0") {}
+			hhvm_stemmerExtension(): Extension("hhvm_stemmer", "0.1.0") {}
 
 		void moduleInit() override {
 			HHVM_FE(hh_stem);
@@ -138,7 +138,7 @@ namespace HPHP {
 
 			loadSystemlib();
 		}
-	} s_php_stemmer_extension;
+	} s_hhvm_stemmer_extension;
 
-	HHVM_GET_MODULE(php_stemmer);
+	HHVM_GET_MODULE(hhvm_stemmer);
 }
