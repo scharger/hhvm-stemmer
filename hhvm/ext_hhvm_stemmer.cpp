@@ -16,7 +16,7 @@
 
 #define FFI_LIB "libstemmer.so"
 
-#include "libstemmer.h"
+#include "./libstemmer_c/include/libstemmer.h"
 
 #include "hphp/runtime/ext/extension.h"
 
@@ -75,45 +75,6 @@ namespace HPHP {
 		
 	}
 	
-/*	Variant HHVM_FUNCTION(stemmer_create, const String& language, const Variant& enc) {		
-		if (language.empty()) {
-			raise_warning("Language cannot be empty");
-			return false;
-		}
-		
-		sb_stemmer *sb;
-		
-		if (!enc.isNull()) {
-			sb = sb_stemmer_new(language.data(), enc.toString().data());
-		} else {
-				sb = sb_stemmer_new(language.data(), "UTF-8");
-		}
-
-		if (sb == NULL) {
-			return false;
-		}
-		
-		return sb;
-
-		//return Variant(req::make<stemmer_descriptor>(sb));
-	}
-	
-	Variant HHVM_FUNCTION(stemmer_apply, const Resource& sb, const String& word) {
-		auto const p_sb = dyn_cast_or_null<sb_stemmer>(result);
-		if (p_sb == nullptr || p_sb->isInvalid()) {
-			return false;
-		}
-		sb_stemmer *sb = p_sb->get();
-		
-		const sb_symbol *result = sb_stemmer_stem(sb, (const sb_symbol *)input->val, input->len);
-		if (result == NULL) {
-			raise_warning("Stemmer_apply failed");
-			return false;
-		}
-		
-		return String((char *)result);
-	}
-*/	
 	Array HHVM_FUNCTION(stemmer_list) {
 		Array ret;
 
@@ -132,8 +93,6 @@ namespace HPHP {
 
 		void moduleInit() override {
 			HHVM_FE(hh_stem);
-			/*HHVM_FE(stemmer_create);
-			HHVM_FE(stemmer_apply);*/
 			HHVM_FE(stemmer_list);
 
 			loadSystemlib();

@@ -19,12 +19,5 @@
 <<__Native>>
 function hh_stem(string $language, string $word, string $encoding = "UTF-8"): mixed;
 
-
-/*<<__Native>>
-function stemmer_create(string $language, ?string $encoding = null): mixed;
-
-<<__Native>>
-function stemmer_apply(resource $stemmern, string $word): mixed;*/
-
 <<__Native>>
 function stemmer_list(): mixed;
