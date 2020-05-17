@@ -1,16 +1,4 @@
-.PHONY: php
+.PHONY: hhvm
 
-php: libstemmer.o
-	cd php; ( make clean && phpize --clean && phpize && ./configure && make )
-
-libstemmer.o:
-	make -Csnowball clean
-	make CFLAGS=-fPIC -Csnowball libstemmer.o
-
-test:
-	cd php && NO_INTERACTION=1 TEST_PHP_ARGS=--show-diff make test
-
-memtest:
-	cp run-tests.php php
-	cd php && echo 's' | TEST_PHP_ARGS=-m make test
-
+hhvm:
+	cd hhvm/libstemmer_c/ && make && mv libstemmer.o ../libstemmer.o && cd .. && hphpize && cmake . && make && cp php_stemmer.so /etc/hhvm/php_stemmer.so && service hhvm restart && hhvm tests/001.php
