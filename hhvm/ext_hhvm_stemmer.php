@@ -17,7 +17,7 @@
 
 
 <<__Native>>
-function hh_stem(string $language, string $word, string $encoding = "UTF-8"): mixed;
+function hh_stem(string $language, string $word, string $encoding = "UTF_8"): mixed;
 
 <<__Native>>
-function stemmer_list(): mixed;
+function stemmer_list(): array;
