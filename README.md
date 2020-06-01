@@ -25,7 +25,8 @@ Move content from /__ PGKROOT__/lib/ to /opt/hhvm/_YOUR_HHVM_VERSION_/
 
 #### 0.2.
 ```shell
-cd hhvm/libstemmer_c/ && make && mv libstemmer.o ../libstemmer.o && cd .. && /opt/hhvm/_YOUR_HHVM_VERSION_/bin/hphpize && cmake . && make && cp hhvm_stemmer.so /etc/hhvm/hhvm_stemmer.so && service hhvm restart && hhvm tests/001.php
+export hphpizepatch=/opt/hhvm/_YOUR_HHVM_VERSION_/bin/
+make
 ```
 
 #### 0.3.
