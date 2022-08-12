@@ -43,8 +43,6 @@
 
 #include "hphp/runtime/vm/native-data.h"
 
-#include "hphp/runtime/base/actrec-args.h"
-
 namespace HPHP {
 	
 	Variant HHVM_FUNCTION(hh_stem,  const String& language, const String& word, const String& enc) {
