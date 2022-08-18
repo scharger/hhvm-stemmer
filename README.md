@@ -1,8 +1,6 @@
 # HHVM Snowball Stemmer extension
 (Forked from https://github.com/shabbyrobe/php-stemmer)
 
-### Tested with HHVM 4.8 and 3.27
-
 ## Version for PHP
 https://github.com/scharger/php-stemmer-short
 
